@@ -30,7 +30,6 @@ if(!empty($arr))
 }
 else
 {
-	var_dump($cssData);
 	$sprite->output_image($cssData);	
 	echo '<a href="download.php?file=css_sprite.png" target="_blank">Click Here for Sprite</a><br/><a href="download.php?file=styles.css" target="_blank">Click Here for Css</a>';
 	
