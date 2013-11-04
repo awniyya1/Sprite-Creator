@@ -1,0 +1,49 @@
+.index1{
+background-image:url(../images/css_sprite.png);
+background-position:0px 0px;
+width:102px;
+height:102px;
+background-size:102px 102px;
+}
+.index2{
+background-image:url(../images/css_sprite.png);
+background-position:0px -125px;
+width:204px;
+height:204px;
+background-size:204px 204px;
+}
+.index3{
+background-image:url(../images/css_sprite.png);
+background-position:-225px 0px;
+width:204px;
+height:204px;
+background-size:204px 204px;
+}
+.stb1354980691599_lowres_en-us{
+background-image:url(../images/css_sprite.png);
+background-position:-225px -225px;
+width:25px;
+height:25px;
+background-size:25px 25px;
+}
+.images{
+background-image:url(../images/css_sprite.png);
+background-position:-225px -250px;
+width:64px;
+height:64px;
+background-size:64px 64px;
+}
+.images1{
+background-image:url(../images/css_sprite.png);
+background-position:-225px -325px;
+width:64px;
+height:64px;
+background-size:64px 64px;
+}
+.index{
+background-image:url(../images/css_sprite.png);
+background-position:-225px -400px;
+width:102px;
+height:102px;
+background-size:102px 102px;
+}

@@ -64,17 +64,17 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   //       do anything a second time
   $.ui.plugin.add( "draggable", "restraint", {
     create: function(event,ui){         handleInit   .call( this, event, ui ); },
-    start: function(event,ui){ if( ! $(this).data("draggable").options.obstacle ) // if there are obstacles, we already handled both
+    start: function(event,ui){ if( ! $(this).data("ui-draggable").options.obstacle ) // if there are obstacles, we already handled both
                                {        
                                         handleStart  .call( this, event, ui );
                                }
                              } ,
-    drag:  function(event,ui){ if( ! $(this).data("draggable").options.obstacle ) // if there are obstacles, we already handled both
+    drag:  function(event,ui){ if( ! $(this).data("ui-draggable").options.obstacle ) // if there are obstacles, we already handled both
                                { 
                                  return handleCollide.call( this, event, ui ); 
                                }
                              } ,
-    stop:  function(event,ui){ if( ! $(this).data("draggable").options.obstacle ) // if there are obstacles, we already handled both
+    stop:  function(event,ui){ if( ! $(this).data("ui-draggable").options.obstacle ) // if there are obstacles, we already handled both
                                {
                                         handleCollide.call( this, event, ui );
                                         handleStop   .call( this, event, ui );
@@ -85,20 +85,20 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   // Likewise, if we already have an obstacle or restraint, we've done it all, so don't repeat
   $.ui.plugin.add( "draggable", "multipleCollisionInteractions", {
     create: function(event,ui){         handleInit   .call( this, event, ui ); },
-    start: function(event,ui){ if( ! $(this).data("draggable").options.obstacle &&
-                                   ! $(this).data("draggable").options.restraint   )
+    start: function(event,ui){ if( ! $(this).data("ui-draggable").options.obstacle &&
+                                   ! $(this).data("ui-draggable").options.restraint   )
                                {       
                                         handleStart  .call( this, event, ui );
                                }
                              } ,
-    drag:  function(event,ui){ if( ! $(this).data("draggable").options.obstacle &&
-                                   ! $(this).data("draggable").options.restraint   )
+    drag:  function(event,ui){ if( ! $(this).data("ui-draggable").options.obstacle &&
+                                   ! $(this).data("ui-draggable").options.restraint   )
                                { 
                                  return handleCollide.call( this, event, ui ); 
                                }
                              } ,
-    stop:  function(event,ui){ if( ! $(this).data("draggable").options.obstacle &&
-                                   ! $(this).data("draggable").options.restraint   )
+    stop:  function(event,ui){ if( ! $(this).data("ui-draggable").options.obstacle &&
+                                   ! $(this).data("ui-draggable").options.restraint   )
                                {
                                         handleCollide.call( this, event, ui );
                                         handleStop   .call( this, event, ui );
@@ -349,7 +349,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   function handleInit( event, ui, type )
   {
-    var w = $(this).data("draggable");
+    var w = $(this).data("ui-draggable");
     var o = w.options;
   }
 
@@ -386,7 +386,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   
   function handleStart(event,ui)
   {
-    VISUAL_DEBUG = $(this).data("draggable").options.collisionVisualDebug;
+    VISUAL_DEBUG = $(this).data("ui-draggable").options.collisionVisualDebug;
     $(this).data( "jquery-ui-draggable-collision-recent-position", ui.originalPosition ); 
   }
 
@@ -441,7 +441,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     var postp = "postprotrusion";
 
     // NOTE: widget is used for uiTrigger, otherwise event-binders don't get a "ui" variable
-    var widget = $(this).data("draggable");
+    var widget = $(this).data("ui-draggable");
     var o      = widget.options;
 
     // List of Interactions -- first one is the main set of args from the .draggable() setup call, rest are multipleCollisionInteractions:[...]
